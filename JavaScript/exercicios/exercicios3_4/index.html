@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="app1">
+        <input type="text" name="name1">
+        <button class='button'> New Name </button>
+        
+    </div>
+
+    <div id="app2">
+    </div>
+
+    <script>
+        // Guardando as referencias dos elementos a serem usados
+        var names = ['Atropos', 'Ignys', 'Flamyr'];
+        var itemListElement;
+        var BtnElement = document.querySelector('#app1 button');
+        // outra opcao
+        // var BtnElement = document.querySelector('button.button');
+
+        var listElement = document.querySelector('#app2');
+        var UlistElement = document.createElement('ul');
+        listElement.appendChild(UlistElement);
+        listElement = UlistElement;
+        
+        for (var i = 0 ; i < names.length; i++) {
+            itemListElement = document.createElement('li');
+            itemListElement.textContent = names[i];
+            listElement.appendChild(itemListElement);
+        
+        }
+    
+        BtnElement.onclick = function(){
+            itemListElement = document.createElement('li');
+            var inputElement = document.querySelector('input[name=name1]');
+            // outra opcao
+            // var inputElement = document.querySelector('#app1 input');
+
+            itemListElement.textContent = inputElement.value;
+            listElement.appendChild(itemListElement);
+            inputElement.value = '';
+            //alert(text.value);
+        }
+
+        console.log(listElement); 
+    
+
+    </script>
+</body>
+
+</html>

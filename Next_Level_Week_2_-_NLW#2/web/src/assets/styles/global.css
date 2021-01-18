@@ -1,0 +1,69 @@
+:root {
+    font-size: 60%; /* 60% de 16pixels(tamanho maximo da fonte) */
+
+    /* variaveis que representam as cores do layout da pagina*/
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842C2;
+    --color-secundary: #04D361;
+    --color-secundary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+
+}
+
+/* todos os elementos devem ter essas caracteristicas abaixo*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* faz com que o padding e outros atributos sejam contabilizados na altura/largura do elemento*/
+}
+
+html, body, #root {
+    height: 100vh; /* vh == viewport height, faz com que esses elementos(html, body e root) sempre ocupem 100% da altura da tela*/
+}
+
+body {
+    background: var(--color-background);
+}
+
+#root {
+    /* todo e qualquer conteudo de root deverá estar alinhado com o centro da pagina*/
+    display: flex;
+    align-items: center; /*alinhamento vertical*/
+    justify-content: center; /*alinhamento horizontal*/
+
+}
+
+body,
+input,
+button,
+textarea {
+    color: var(--color-text-base);
+    font: 500 1.6rem Poppins; /* como nesse caso font-size é 60%(~9.6pixels) ==> 1rem == 60%(9.6pixels)  */
+}                             /* todos os tamanhos devem ficar em função de rem(que SEMPRE fica em função de font-size)*/ 
+                              /* toda vez que precisar alterar containeres, caixas, só será preciso mudar font-size */ 
+                              /* garante maior fluidez e maior acessibilidade quando forneço ao user um controle sobre font-size*/ 
+
+.container {
+    width: 90vw; /* deve ocupar sempre 90% da tela a nao ser que ela ultrapasse 700 pixels*/
+    max-width: 700px; /*limite da tela*/
+}
+
+@media (min-width: 700px){ /* em dispositivos em que a largura minima da tela seja 700pixels o tamanho da fonte aumenta*/
+    :root {
+        font-size: 62.5%; 
+    }
+
+}

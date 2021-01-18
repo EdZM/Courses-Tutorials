@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="app1">
+        <button class='button'> ADD </button>
+    </div>
+
+    <div id="app2">
+        
+    </div>
+
+
+    <script>
+        // Guardando as referencias dos elementos a serem usados
+        var BtnElement = document.querySelector('#app1 button');
+        var boxElement = document.querySelector('#app2');
+        
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var i = 1;
+        // cada vez que o botao for clicado um quadrado vermelho é criado e desenhado
+        BtnElement.onclick = function(){
+            var newBox = document.createElement('div');
+            var boxClass= "box";
+            boxClass += i++; //concatena box com i ==> box1, box2, ...
+            newBox.setAttribute('class', boxClass);
+            newBox.style.width = 100;
+            newBox.style.height = 100;
+            newBox.style.backgroundColor = '#f00';
+            newBox.style.margin = 10;
+
+            // Antes de mudar a cor é preciso que o quadrado seja criado na tela
+            boxElement.appendChild(newBox);
+
+            // Ao passar o mouse por cima do quadrado ja criado ele muda sua cor para uma aleatoria
+            newBox.onmouseover = function(){
+                newBox.style.backgroundColor = getRandomColor();
+
+            }            
+            
+            console.log(newBox); //mostra a referencia contida em newBox no console do navegador
+
+        }
+       
+    </script>
+</body>
+
+</html>

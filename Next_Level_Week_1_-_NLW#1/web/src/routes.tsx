@@ -1,0 +1,24 @@
+import React from 'react';
+import { Route, BrowserRouter} from 'react-router-dom';
+
+// BrowserRouter é usado mais para fazer a navegação dentro do browser
+
+// exact verifica o nome exato da rota
+
+import Home from './pages/Home';
+import CreatePoint from './pages/CreatePoint';
+import PointCreated from './pages/PointCreated';
+
+const Routes = () => {
+    return (
+        <BrowserRouter> 
+            <Route component={Home} path="/" exact/>
+            <Route component={CreatePoint} path="/create-point" />
+            <Route component={PointCreated} path ="/point-created"/>
+        </BrowserRouter>
+    
+    );
+
+}
+
+export default Routes;

@@ -1,0 +1,153 @@
+
+<html >
+    <head>
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <div id = "app1" >
+            <input type="text" name="name1" id="name2" class="name3"/>
+            <button class= 'button'> ADD </button>
+        </div>
+        
+        <div id="app2">
+            
+        </div>
+
+        <div id="app3">
+            <div class="box"></div>
+        </div>
+
+        <script>
+            // preferencialmente colocado antes de fechar a tag body
+            // aqui vai o codigo .js
+            // console.log('Hellooo');
+            
+            // // VARIAVEIS
+            // var nome = "shurables"; // tipagem dinamica de variaveis
+            // var idade = 23;
+            // var peso = 81.7;
+            // var humano = true;
+
+            // var nomes = ['Atropos','Ignys','Flamyr'];
+
+            // // OBJs
+            // var caracteristicas = {
+            //     nome: 'Káryst',
+            //     idade: 25,
+            //     peso: 70.2,
+            //     humano: false
+            // };
+
+            // console.log(caracteristicas.nome);
+
+            // // OPS matematicas
+            // var x = 10, y = 5;
+            // x += 3; 
+            // console.log(x);
+        
+            // //funções
+            // function sum(num1, num2) {
+            //     var result = num1 + num2;
+            //     return result;
+            // }
+            // console.log(soma(10,2));
+
+            // // Condicionais
+            // function returnsex(sex) {
+            //     //var result = num1 + num2;
+            //     if(sex === 'M') { //verifica se os valores E os tipos da variaveis sao iguais
+            //         return 'Male';
+            //     } else if (sex === 'F'){
+            //         return 'Female';
+            //     } else {
+            //         return 'Other';
+            //     }
+            // }
+            // console.log(returnsex('F'));
+
+            // // OPS logicos 
+            // var sex = 'M';
+            // var result = sex === 'M';
+            // console.log(result);
+
+            // // Condicao ternaria
+            // var sex = 'M';
+            // var returnsex = (sex === 'M')? 'Male' : 'Female';
+            // console.log(returnsex);
+        
+            // // Estruturas de repetição
+            // // Use FOR quando o numero de iterações é conhecido
+            // for (var index = 0; index <= 100; index++) {
+            //     console.log(index);    
+            // }             
+
+            // // Use WHILE quando o numero de iterações é desconhecido
+            // var j = 9778501;
+            // while (j > 50) {
+            //     console.log(j);
+            //     j /= 5;
+            // }
+
+            // // Intervalo e Timeout
+            // function show_something() {
+            //     console.log('HELLOOOOO');
+            // }    
+            // function show_something_diferent() {
+            //     console.log('SEE YA');
+            // }    
+            // setTimeout(show_something, 2000); //espera 2s para rodar a função
+            // setInterval(show_something_diferent, 3000); // roda a função a cada 3 segundos
+            
+
+
+
+            // // Manipulando a DOM
+            // function show_alert(){
+            //     alert('Some button has been pressed');
+
+            // }
+
+            // OPCOES para colocar a referencia de um dado elemento da DOM na variavel
+            // var inputElement = document.getElementById('name2');
+            // var inputElement = document.getElementsByTagName('input')[0]; //sempre retorna um vetor. Se nao colocar o [] ele retornará todo o vetor
+            // var inputElement = document.getElementsByClassName('name3')[0]; //sempre retorna um vetor. Se nao colocar o [] ele retornará todo o vetor
+            // var inputElement = document.querySelector('input[name=name1]'); //percorre a DOM e retorna somente UM elemento
+            // var inputElement = document.querySelector('body div#app input'); //percorre a DOM
+            // var BtnElement = document.querySelector('body div#app button'); //percorre a DOM
+            var BtnElement = document.querySelector('button.button'); //percorre a DOM
+            var inputElement = document.querySelector('input[name=name1]');
+            
+            //console.log(BtnElement);
+            BtnElement.onclick = function() {
+                var text = inputElement.value;
+                alert(text);
+            }
+
+            var linkElement = document.createElement('a');            
+            linkElement.setAttribute('href','https://learnxinyminutes.com/docs/pt-br/python3-pt/');
+            linkElement.setAttribute('title', 'Learn X in Y minutes');
+
+            var textElement = document.createTextNode('Access Learn X in Y minutes');
+            linkElement.appendChild(textElement);
+
+            // Adicionar um filho
+            var containerElement = document.querySelector('#app2');
+            containerElement.appendChild(linkElement);
+
+            // // Remover um filho
+            // inputElement = document.querySelector('#app1 input');
+            // containerElement = document.querySelector('#app1');
+            // containerElement.removeChild(inputElement);
+            
+            // Ambas as opções sao validas para referenciar box 
+            //var boxElement = document.querySelector('#app3 div');
+            var boxElement = document.querySelector('.box');
+            console.log(boxElement);
+
+            boxElement.style.width = 200;
+            boxElement.style.height = 200;
+            boxElement.style.backgroundColor = '#f00';
+
+        </script>
+    </body>
+</html>
